@@ -1,11 +1,21 @@
 import { Breadcrumb, Col, Container,
      Image, ListGroup,
      Row,Card, FormControl, Button } from 'react-bootstrap'
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addToChart } from '../action/CartAction';
 import Header from '../components/Header'
+
 
 const ProductDetail = () => {
     const stock = 5;
+
+    const dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+        dispatch(addToChart(1,6))
+    }
+
     return (
         <div>
             <Header/>
@@ -74,7 +84,7 @@ const ProductDetail = () => {
                                     </Row>
                                 </ListGroup.Item>
                                 <ListGroup.Item>
-                                    <Button>
+                                    <Button onClick={handleAddToCart}>
                                         Add To Cart
                                     </Button>
                                 </ListGroup.Item>

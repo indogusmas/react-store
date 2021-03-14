@@ -10,11 +10,13 @@ import {
   Card,
   Container,
 } from "react-bootstrap";
+import { useHistory } from 'react-router-dom';
 import Header from "../components/Header";
 import Message from "../components/Message";
 
 const Cart = () => {
   const stock = 5;
+  const history = useHistory();
   const products = [
     {
       _id: "1",
@@ -41,6 +43,10 @@ const Cart = () => {
       count: 1,
     },
   ];
+
+  const handleCheckOut = () => {
+    history.push("/checkout")
+  }
 
   return (
     <>
@@ -88,7 +94,7 @@ const Cart = () => {
                 1000
               </ListGroup.Item>
               <ListGroupItem>
-                <Button type="button" className="btn-block">
+                <Button type="button" className="btn-block" onClick={handleCheckOut}>
                   Proces Check Out
                 </Button>
               </ListGroupItem>

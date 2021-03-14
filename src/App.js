@@ -7,10 +7,13 @@ import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import ProductCategory from './pages/ProductCategory';
 import Cart from './pages/Cart';
+import CheckOut from './pages/CheckOut';
+import Account from './pages/Account';
 
 function App() {
   return (
     <div>
+      <div className="hight: 200px">
       <Router>
         <Switch>
           <Route exact path = "/">
@@ -28,9 +31,16 @@ function App() {
           <Route path="/cart">
             <Cart/>
           </Route>
+          <Route path="/checkout">
+            <CheckOut/>
+          </Route>
+          <Route path="/account">
+            <Account/>
+          </Route>
         </Switch>
       </Router>
-      <Footer/>
+      </div>
+      {/* <Footer/> */}
     </div>
   );
 }
